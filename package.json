@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel src -d dist",
     "start": "yarn run build && nodemon dist/main.js",
-    "serve": "node dist/main.js",
+    "serve": "nodemon dist/main.js",
     "test": "mocha --require @babel/register"
   },
   "devDependencies": {
