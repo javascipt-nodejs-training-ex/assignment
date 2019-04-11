@@ -7,6 +7,6 @@ exports.getAllSprints = (req, res, next) => {
     res.end(JSON.stringify(sprints));
     })
     .catch(err => {
-    console.error(err);
+        console.error(err);
     });
 }
