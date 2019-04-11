@@ -1,16 +1,11 @@
 import express from 'express';
-const router =  express.Router();
 
-import { jira } from './../config'
+import BoardController from './../controllers/boardController';
+import SprintController from './../controllers/sprintController';
 
-router.get('/:issueNumber', function(req, res, next){
-  jira.findIssue(req.params.issueNumber)
-    .then(issue => {
-      console.log(`Status: ${issue.fields.status.name}`);
-    })
-    .catch(err => {
-      console.error(err);
-    });
-});
+const route =  express.Router();
 
-module.exports = router;
+route.get('/:boardId',BoardController.getBoard);
+route.get('/:boardId/all-sprints', SprintController.getAllSprints);
+
+module.exports = route;
