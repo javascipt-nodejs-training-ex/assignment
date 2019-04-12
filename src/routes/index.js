@@ -14,5 +14,6 @@ route.get('/:boardId', BoardController.getBoard);
 route.get('/:boardId/all-sprints', SprintController.getAllSprints);
 route.get('/:boardId/:sprintId/assigned-stories', SprintController.getAssignedStories);
 route.get('/user/:boardId/:sprintId', MemberController.getUsers);
+route.get('/:boardId/sprint/:sprintId/username=:username', MemberController.getMemberForSprint);
 
 module.exports = route;
