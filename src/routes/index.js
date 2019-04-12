@@ -9,5 +9,6 @@ const route =  express.Router();
 route.get('/:boardId',BoardController.getBoard);
 route.get('/:boardId/all-sprints', SprintController.getAllSprints);
 route.get('/user/:boardId/:sprintId', MemberController.getUsers);
+route.get('/:boardId/sprint/:sprintId/username=:username', MemberController.getMemberForSprint);
 
 module.exports = route;
