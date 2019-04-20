@@ -9,7 +9,7 @@ const port = 3000;
 const app = express();
 const server = http.createServer(app);
 
-app.use('/api', routes);
+app.use('/api/board', routes);
 
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);

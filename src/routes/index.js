@@ -14,10 +14,9 @@ let cache = apicache.middleware;
 route.get('/:boardId', BoardController.getBoard);
 route.get('/:boardId/all-sprints', SprintController.getAllSprints);
 route.get('/:boardId/:sprintId/assigned-stories', SprintController.getAssignedStories);
-route.get('/user/:boardId/:sprintId', MemberController.getUsers);
+route.get('/:boardId/:sprintId/user', MemberController.getUsers);
 route.get('/:boardId/sprint/:sprintId/username=:username', MemberController.getMemberForSprint);
-route.get('/daily-report/:boardId/:sprintId', ReportController.dailyReport);
-route.get('/weekly-report/:boardId/:sprintId', ReportController.weeklyReport);
-
+route.get('/:boardId/:sprintId/daily-report', ReportController.dailyReport);
+route.get('/:boardId/:sprintId/weekly-report', ReportController.weeklyReport);
 
 module.exports = route;
